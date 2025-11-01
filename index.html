@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naviguide - Your Compass for Clarity</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Naviguide</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#guidance">Guidance Hub</a></li>
+                <li><a href="#sources">Sumber Terpercaya</a></li>
+                <li><a href="#experts">Tanya Ahli</a></li>
+                <li><a href="#urgent" class="urgent-nav">Konseling Gratis</a></li>
+                <li><a href="#booth">Booth Event</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <audio id="bgm" src="Illumoria.mp3" loop></audio>
+
+<script>
+  document.addEventListener("click", () => {
+    const audio = document.getElementById("bgm");
+    audio.play();
+  }, { once: true });
+</script>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tidak Perlu Tahu Semua <span class="highlight">Jawabannya</span> Sekarang</h1>
+                <p class="hero-subtitle">Your Compass for Clarity, Not Just Answers</p>
+                <p class="hero-description">Perasaanmu tetap valid meski belum terdefinisi. Kadang yang kamu butuhkan bukan label, tapi panduan yang lebih terarah.</p>
+                
+                <!-- Interactive Painting -->
+                <div class="interactive-painting">
+                    <div class="painting-canvas" id="mainCanvas">
+                        <!-- Coretan akan ditambahkan oleh JavaScript -->
+                    </div>
+                    <div class="painting-controls">
+                        <button class="paint-btn" onclick="addRandomStroke()">Tambah Coretan</button>
+                        <button class="paint-btn" onclick="clearAllStrokes()">Hapus Semua</button>
+                    </div>
+                    <p class="painting-caption">Klik coretan untuk menghapus, atau buat coretan baru</p>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Apa yang sedang kamu rasakan atau alami? Misal: sulit tidur, merasa cemas di keramaian...">
+                    <button id="searchBtn">Cari Panduan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Panduan yang Tepat untuk <span class="highlight">Perjalananmu</span></h2>
+            <div class="features-grid">
+                <div class="feature-card" data-target="guidance">
+                    <div class="feature-icon">🧭</div>
+                    <h3>Guidance Hub</h3>
+                    <p>Panduan interaktif yang membantumu memahami perasaan langkah demi langkah</p>
+                    <button class="feature-btn">Jelajahi Sekarang</button>
+                </div>
+
+                <div class="feature-card" data-target="sources">
+                    <div class="feature-icon">📚</div>
+                    <h3>Sumber Terpercaya</h3>
+                    <p>Artikel dan informasi yang sudah dikurasi dari sumber resmi dan terverifikasi</p>
+                    <button class="feature-btn">Lihat Koleksi</button>
+                </div>
+
+                <div class="feature-card" data-target="experts">
+                    <div class="feature-icon">💬</div>
+                    <h3>Tanya Ahli</h3>
+                    <p>Informasi psikolog di Jakarta dan panduan konsultasi melalui BPJS</p>
+                    <button class="feature-btn">Temukan Ahli</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guidance Hub Section -->
+    <section id="guidance" class="guidance-section">
+        <div class="container">
+            <h2 class="section-title">Guidance Hub - <span class="highlight">Temukan Arahmu</span></h2>
+            <div class="guidance-flow">
+                <div class="flow-step active" data-step="1">
+                    <h3>Apa yang sedang kamu rasakan?</h3>
+                    <div class="options-grid">
+                        <div class="option-btn" data-feeling="cemas">😰 Cemas / Khawatir</div>
+                        <div class="option-btn" data-feeling="sedih">😔 Sedih / Kecewa</div>
+                        <div class="option-btn" data-feeling="stres">😫 Stres / Tertekan</div>
+                        <div class="option-btn" data-feeling="bingung">🤔 Bingung / Tidak Pasti</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step" data-step="2">
+                    <h3>Seberapa sering kamu merasakan ini?</h3>
+                    <div class="options-grid">
+                        <div class="option-btn" data-frequency="kadang">Kadang-kadang</div>
+                        <div class="option-btn" data-frequency="sering">Cukup Sering</div>
+                        <div class="option-btn" data-frequency="selalu">Hampir Selalu</div>
+                    </div>
+                </div>
+
+                <div class="flow-step" data-step="3">
+                    <div class="result-content">
+                        <h3>Panduan untuk <span class="highlight">Kamu</span></h3>
+                        <div class="guidance-result">
+                            <p>Ingat, tidak apa-apa untuk belum memiliki semua jawaban. Proses memahami diri sendiri butuh waktu.</p>
+                            <div class="action-steps">
+                                <h4>Langkah Pertama yang Bisa Dicoba:</h4>
+                                <ul>
+                                    <li>Luangkan waktu 5 menit untuk bernapas dalam-dalam</li>
+                                    <li>Tuliskan perasaanmu di jurnal atau notes</li>
+                                    <li>Lakukan aktivitas yang menenangkan</li>
+                                </ul>
+                            </div>
+                            <button class="primary-btn" id="resetGuidance">Mulai Lagi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Sources Section -->
+    <section id="sources" class="sources-section">
+        <div class="container">
+            <h2 class="section-title">Sumber <span class="highlight">Terpercaya</span></h2>
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-badge">WHO</div>
+                    <h3>Mental Health: Anxiety Disorders</h3>
+                    <p>Informasi lengkap tentang gangguan kecemasan dari Organisasi Kesehatan Dunia</p>
+                    <div class="source-tags">
+                        <span>Internasional</span>
+                        <span>Resmi</span>
+                    </div>
+                    <a href="https://www.who.int/news-room/fact-sheets/detail/anxiety-disorders" target="_blank" class="source-link">Baca di Situs WHO →</a>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-badge">Kemenkes RI</div>
+                    <h3>Pedoman Kesehatan Jiwa</h3>
+                    <p>Panduan resmi dari Kementerian Kesehatan Indonesia tentang kesehatan mental</p>
+                    <div class="source-tags">
+                        <span>Lokal</span>
+                        <span>Resmi</span>
+                    </div>
+                    <a href="https://ayosehat.kemkes.go.id/gangguan-kesehatan-mental" target="_blank" class="source-link">Baca Artikel →</a>
+                </div>
+                
+                <div class="source-card">
+                    <div class="source-badge">WHO</div>
+                    <h3>Coping with Stress</h3>
+                    <p>Cara mengatasi stres dan kecemasan dalam kehidupan sehari-hari</p>
+                    <div class="source-tags">
+                        <span>Praktis</span>
+                        <span>Step-by-Step</span>
+                    </div>
+                    <a href="https://www.who.int/news-room/questions-and-answers/item/stress" target="_blank" class="source-link">Baca Panduan →</a>
+                </div>
+
+                <div class="source-card">
+                    <div class="source-badge">CDC</div>
+                    <h3>Worry and Anxiety</h3>
+                    <p>Sumber terpercaya tentang kesehatan mental dari Centers for Disease Control</p>
+                    <div class="source-tags">
+                        <span>Internasional</span>
+                        <span>Evidence-Based</span>
+                    </div>
+                    <a href="https://www.cdc.gov/howrightnow/emotion/worry/index.html" target="_blank" class="source-link">Kunjungi Situs →</a>
+                </div>
+
+                <div class="source-card">
+                    <div class="source-badge">P2PTM Kemenkes</div>
+                    <h3>Deteksi Dini Masalah Jiwa</h3>
+                    <p>Layanan konsultasi dini (gratis) masalah kesehatan mental dari pemerintah</p>
+                    <div class="source-tags">
+                        <span>Lokal</span>
+                        <span>Deteksi Dini</span>
+                    </div>
+                    <a href="https://www.healing119.id/" target="_blank" class="source-link">Baca Selengkapnya →</a>
+                </div>
+
+                <div class="source-card">
+                    <div class="source-badge">NIH</div>
+                    <h3>Anxiety Disorders</h3>
+                    <p>Informasi mendalam tentang gangguan kecemasan dari National Institutes of Health</p>
+                    <div class="source-tags">
+                        <span>Research</span>
+                        <span>Medical</span>
+                    </div>
+                    <a href="https://www.nimh.nih.gov/health/topics/anxiety-disorders" target="_blank" class="source-link">Pelajari Lebih →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask Expert Section -->
+    <section id="experts" class="expert-section">
+        <div class="container">
+            <h2 class="section-title">Tanya <span class="highlight">Ahli</span></h2>
+            
+            <!-- BPJS Information -->
+            <div class="bpjs-info">
+                <h3>Konsultasi melalui BPJS Kesehatan</h3>
+                <div class="bpjs-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Kunjungi Faskes Tingkat 1 (Puskesmas/Klinik) tempat Anda terdaftar</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Minta rujukan untuk konsultasi kesehatan mental ke psikolog/psikiater</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Dapatkan surat rujukan dan janji temu dengan spesialis</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <p>Tunjukan kartu BPJS dan surat rujukan saat berkonsultasi</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Psychologists List -->
+            <div class="psychologists-section">
+                <h3>Psikolog di Jakarta</h3>
+                
+                <div class="psychologist-tabs">
+                    <button class="tab-btn active" data-tab="online">Konsultasi Online</button>
+                    <button class="tab-btn" data-tab="offline">Konsultasi Offline</button>
+                </div>
+
+                <div id="online" class="tab-content active">
+                    <div class="psychologist-card" data-website="https://intothelightid.org">
+                        <h4>Into the Light Indonesia</h4>
+                        <p>Layanan konsultasi psikologi online untuk remaja dan dewasa</p>
+                        <div class="contact-info">
+                            <span>📱 Website: intothelightid.org</span>
+                            <span>📞 Hotline: 021-500-454</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk mengunjungi website →</div>
+                    </div>
+                    
+                    <div class="psychologist-card" data-website="https://halojiwa.id">
+                        <h4>Halo Jiwa</h4>
+                        <p>Platform konsultasi psikologi online dengan berbagai spesialisasi</p>
+                        <div class="contact-info">
+                            <span>📱 Website: halojiwa.id</span>
+                            <span>📞 Hotline: 119 ext 8</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk mengunjungi website →</div>
+                    </div>
+                    
+                    <div class="psychologist-card" data-website="https://konsultasiku.co.id">
+                        <h4>Konsultasiku</h4>
+                        <p>Layanan konsultasi online dengan psikolog berpengalaman</p>
+                        <div class="contact-info">
+                            <span>📱 Website: konsultasiku.co.id</span>
+                            <span>📞 Info: 1500-131</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk mengunjungi website →</div>
+                    </div>
+                </div>
+
+                <div id="offline" class="tab-content">
+                    <div class="psychologist-card" data-location="RSUD Cengkareng, Jakarta">
+                        <h4>RSUD Cengkareng</h4>
+                        <p>Poli Jiwa - Layanan rawat jalan kesehatan mental</p>
+                        <div class="contact-info">
+                            <span>📍 Jl. Bumi Cengkareng Indah No.1</span>
+                            <span>📞 (021) 619-2026</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk melihat lokasi →</div>
+                    </div>
+                    
+                    <div class="psychologist-card" data-location="RSJ Dharmawangsa, Jakarta">
+                        <h4>RSJ Dharmawangsa</h4>
+                        <p>Rumah Sakit Jiwa dengan layanan komprehensif</p>
+                        <div class="contact-info">
+                            <span>📍 Jl. Dharmawangsa Raya No.13</span>
+                            <span>📞 (021) 725-4544</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk melihat lokasi →</div>
+                    </div>
+                    
+                    <div class="psychologist-card" data-location="Puskesmas Menteng, Jakarta">
+                        <h4>Puskesmas Kecamatan Menteng</h4>
+                        <p>Layanan kesehatan mental dasar dengan BPJS</p>
+                        <div class="contact-info">
+                            <span>📍 Jl. Besuki No.4, Menteng</span>
+                            <span>📞 (021) 3190-4588</span>
+                        </div>
+                        <div class="click-indicator">Klik untuk melihat lokasi →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+               <!-- Urgent Help Section - FOKUS HEALING119 -->
+<section id="urgent" class="urgent-section">
+    <div class="container">
+        <div class="urgent-header">
+            <h2 class="section-title">Konseling <span class="highlight">Darurat</span></h2>
+            <p class="urgent-subtitle">Bantuan cepat 24/7 untuk situasi krisis dari Healing119</p>
+        </div>
+
+        <div class="urgent-content">
+            <!-- Hero Section dengan CTA Besar -->
+            <div class="urgent-hero">
+                <div class="urgent-main-card">
+                    <div class="urgent-badge">🚨 BANTUAN SEGERA</div>
+                    <h1>Butuh Tempat Curhat <span class="highlight">Gratis</span> Sekarang?</h1>
+                    <p class="urgent-hero-description">
+                        Healing119 menyediakan layanan konseling <strong>gratis 100%</strong> dengan konselor profesional 
+                        yang siap mendengarkan dan membantumu melewati masa sulit. 
+                        <span class="urgent-highlight">Tidak perlu appointment, langsung klik dan dapatkan bantuan!</span>
+                    </p>
+
+                    <div class="urgent-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Tersedia Setiap Saat</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Gratis Total</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Profesional</div>
+                            <div class="stat-label">Konselor Berpengalaman</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">⚡</div>
+                            <div class="stat-label">Respons Cepat</div>
+                        </div>
+                    </div>
+
+                    <!-- MAIN CTA BUTTON -->
+                    <div class="urgent-main-action">
+                        <button class="urgent-super-btn" onclick="openHealing119()">
+                            <span class="btn-icon">💬</span>
+                            <div class="btn-content">
+                                <div class="btn-title">MULAI KONSELING GRATIS</div>
+                                <div class="btn-subtitle">Klik untuk langsung terhubung dengan konselor Healing119</div>
+                            </div>
+                            <span class="btn-arrow">🚀</span>
+                        </button>
+                        <p class="urgent-cta-note">Tidak perlu registrasi • Langsung dapat bantuan • 100% Privasi Terjaga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Booth Event Section -->
+    <section id="booth" class="booth-section">
+        <div class="container">
+            <h2 class="section-title">Booth Event <span class="highlight">Naviguide</span></h2>
+            <div class="booth-content">
+                <div class="booth-info">
+                    <div class="event-card">
+                        <h3>🎯 Konsultasi Gratis dengan Psikolog</h3>
+                        <p>Manfaatkan kesempatan untuk konsultasi langsung dengan psikolog profesional di booth kami</p>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <strong>📅 Tanggal:</strong> 17 November 2025
+                            </div>
+                            <div class="detail-item">
+                                <strong>⏰ Waktu:</strong> 08.00 - 12.00 WIB
+                            </div>
+                            <div class="detail-item">
+                                <strong>📍 Lokasi:</strong> Universitas Tarumanagara, Gedung R
+                            </div>
+                            <div class="detail-item">
+                                <strong>🎁 Fasilitas:</strong> Konsultasi 30 menit, Screening awal, Materi edukasi Terkait Gejala Anxiety
+                            </div>
+                        </div>
+
+                        <div class="psychologist-lineup">
+                            <h4>Psikolog yang Hadir:</h4>
+                            <ul>
+                                <li>Dr. Angelicia, M.Psi. (Spesialis Anxiety)</li>
+                                <li>Jessica Karyn, M.Psi., Psikolog (Spesialis Remaja)</li>
+                                <li>Imelda Julian, M.Psi. (Spesialis Kesehatan Mental Kerja)</li>
+                            </ul>
+                        </div>
+
+                        <button class="primary-btn large" id="registerBooth">Daftar Sekarang</button>
+                        <p class="registration-note">*Terbatas untuk 50 peserta per hari</p>
+                    </div>
+                </div>
+                
+                <div class="booth-visual">
+                    <div class="booth-animation">
+                        <div class="booth-structure">
+                            <div class="booth-roof"></div>
+                            <div class="booth-walls">
+                                <div class="door"></div>
+                                <div class="window"></div>
+                            </div>
+                            <div class="booth-sign">Naviguide Booth</div>
+                        </div>
+                        <div class="waiting-people">
+                            <div class="person person1"></div>
+                            <div class="person person2"></div>
+                            <div class="person person3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Naviguide. Your Compass for Clarity.</p>
+            <p>Membantumu dimengerti, bukan dibebani.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
