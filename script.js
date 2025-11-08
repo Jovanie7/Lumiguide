@@ -154,7 +154,7 @@ function createStroke(x, y) {
     const width = Math.random() * 120 + 80;
     const height = Math.random() * 25 + 15;
     const rotation = Math.random() * 30 - 15;
-    const colors = ['#fdcecc', '#A7C7E7', '#FFDAB9', '#A8D5BA'];
+    const colors = ['#222663', '#8CA3F5', '#7E6ADC', '#4C47A8', '#04132C', '#4465B5', '#7452B4', '#C4ABF5', '#DFAE6A'];
     const color = colors[Math.floor(Math.random() * colors.length)];
     
     stroke.style.width = width + 'px';
@@ -680,3 +680,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Console message untuk debugging
 console.log('🚨 Urgent Section - Healing119 Integration Loaded');
+
+
+const dustContainer = document.querySelector('.magic-dust');
+
+// generate 25–40 partikel acak
+for (let i = 0; i < 35; i++) {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+
+  // set variabel CSS custom acak
+  sparkle.style.setProperty('--size', `${Math.random() * 6 + 3}px`);
+  sparkle.style.setProperty('--duration', `${3 + Math.random() * 4}s`);
+  sparkle.style.setProperty('--moveX', `${Math.random() * 80 - 40}px`);
+  sparkle.style.setProperty('--moveY', `${Math.random() * 80 - 40}px`);
+  sparkle.style.top = `${Math.random() * 100}%`;
+  sparkle.style.left = `${Math.random() * 100}%`;
+  sparkle.style.animationDelay = `${Math.random() * 3}s`;
+
+  dustContainer.appendChild(sparkle);
+}
