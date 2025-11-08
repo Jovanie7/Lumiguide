@@ -34,7 +34,7 @@
 
 @font-face {
     font-family: 'Aprilia' ;
-    src: url(Aprila-Font/Aprila-Bold.otf);
+    src: url(Aprila-Bold.otf);
 }
 body {
     font-family: 'Roca One', sans-serif;
@@ -1488,4 +1488,5 @@ h1, h2, h3, h4, h5, h6 {
     .btn-title {
         font-size: 1.2rem;
     }
+
 }
