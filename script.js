@@ -701,3 +701,33 @@ for (let i = 0; i < 35; i++) {
   dustContainer.appendChild(sparkle);
 }
 
+// Script untuk hide/show navbar pada scroll mobile
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+const scrollThreshold = 50; // Jarak scroll minimal sebelum navbar disembunyikan
+
+window.addEventListener('scroll', function() {
+    if (window.innerWidth <= 768) { // Hanya berlaku untuk mobile
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Scroll ke bawah - sembunyikan navbar
+            navbar.classList.add('hide-nav');
+            navbar.classList.remove('show-nav');
+        } else {
+            // Scroll ke atas - tampilkan navbar
+            navbar.classList.remove('hide-nav');
+            navbar.classList.add('show-nav');
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+});
+
+// Reset navbar state ketika resize ke desktop
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        navbar.classList.remove('hide-nav', 'show-nav');
+    }
+});
+
